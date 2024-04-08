@@ -9,9 +9,11 @@ package modelos;
  * @author DavidSJ
  */
 public class Nodo {
-    int numero;
-
-    Nodo(int numero) {
+    public int numero;
+    public Nodo siguiente;
+    
+    public Nodo(int numero) {
         this.numero = numero;
+        this.siguiente = null;
     }
 }

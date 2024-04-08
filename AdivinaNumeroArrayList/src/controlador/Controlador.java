@@ -4,7 +4,7 @@
  */
 package controlador;
 
-import java.util.Random;
+import java.util.ArrayList;
 import java.util.Scanner;
 import modelos.ListaSimple;
 import vista.Vista;
@@ -14,21 +14,23 @@ import vista.Vista;
  * @author DavidSJ
  */
 public class Controlador {
-    private final ListaSimple listaSimple;
+    private final ListaSimple modelo;
     private final Vista vista;
 
-    public Controlador(ListaSimple listaSimple, Vista vista) {
-        this.listaSimple = listaSimple;
+    public Controlador(ListaSimple modelo, Vista vista) {
+        this.modelo = modelo;
         this.vista = vista;
     }
 
     public void jugar(Scanner scanner) {
+        int numeroAdivinar = modelo.getNumeroAdivinar();
+
         while (true) {
             int intento = scanner.nextInt();
 
-            if (intento < listaSimple.getNumeroAdivinar()) {
+            if (intento < numeroAdivinar) {
                 vista.mostrarMensajeNumeroMayor();
-            } else if (intento > listaSimple.getNumeroAdivinar()) {
+            } else if (intento > numeroAdivinar) {
                 vista.mostrarMensajeNumeroMenor();
             } else {
                 vista.mostrarMensajeAdivinado();

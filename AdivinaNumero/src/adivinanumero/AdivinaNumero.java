@@ -7,7 +7,7 @@ package adivinanumero;
 import controlador.Controlador;
 import java.util.Random;
 import java.util.Scanner;
-import modelos.ListaSimple;
+import modelos.Nodo;
 import vista.Vista;
 
 /**
@@ -16,22 +16,18 @@ import vista.Vista;
  */
 public class AdivinaNumero {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        ListaSimple list = new ListaSimple(random);
-
+        Nodo nodo = new Nodo(random.nextInt(100) + 1);
         Vista vista = new Vista();
-        Controlador controlador = new Controlador(list, vista);
+        Controlador controlador = new Controlador(nodo, vista);
 
         vista.mostrarMensajeBienvenida();
         controlador.jugar(scanner);
 
         scanner.close();
     }
-    
 }
+

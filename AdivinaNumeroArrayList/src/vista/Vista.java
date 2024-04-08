@@ -4,9 +4,6 @@
  */
 package vista;
 
-import controlador.Controlador;
-import java.util.Scanner;
-
 /**
  *
  * @author DavidSJ

@@ -4,22 +4,24 @@
  */
 package modelos;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 /**
  *
  * @author DavidSJ
  */
 public class ListaSimple {
-    private final int numeroAdivinar;
+    private final ArrayList<Integer> numeros;
 
-    public ListaSimple(Random random) {
-        final int min = 1;
-        final int max = 100;
-        this.numeroAdivinar = random.nextInt(max - min + 1) + min;
+    public ListaSimple() {
+        numeros = new ArrayList<>();
+    }
+
+    public void agregarNumero(int numero) {
+        numeros.add(numero);
     }
 
     public int getNumeroAdivinar() {
-        return numeroAdivinar;
+        return numeros.get(0);
     }
 }

@@ -5,6 +5,7 @@
 package adivinanumero;
 
 import controlador.Controlador;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import modelos.ListaSimple;
@@ -23,10 +24,11 @@ public class AdivinaNumero {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        ListaSimple listaSimple = new ListaSimple(random);
+        ListaSimple modelo = new ListaSimple();
+        modelo.agregarNumero(random.nextInt(100) + 1);
 
         Vista vista = new Vista();
-        Controlador controlador = new Controlador(listaSimple, vista);
+        Controlador controlador = new Controlador(modelo, vista);
 
         vista.mostrarMensajeBienvenida();
         controlador.jugar(scanner);

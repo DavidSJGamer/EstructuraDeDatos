@@ -9,11 +9,11 @@ package modelos;
  * @author DavidSJ
  */
 public class Nodo {
-    String color;
-    Nodo siguiente;
-    Nodo anterior;
+    public String color;
+    public Nodo siguiente;
+    public Nodo anterior;
 
-    Nodo(String color) {
+    public Nodo(String color) {
         this.color = color;
         siguiente = null;
         anterior = null;
