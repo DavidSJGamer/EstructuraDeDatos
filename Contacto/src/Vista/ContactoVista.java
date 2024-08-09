@@ -41,11 +41,15 @@ public class ContactoVista {
         return new ContactoModelo(nombre, id);
     }
 
-    public ContactoModelo modificarContacto() {
+    public String buscarContacto() {
         scanner.nextLine(); 
         System.out.println("--------------------------------------------------");
-        System.out.print("Ingrese numero del Contacto que desea modificar: ");
-        String id = scanner.nextLine();
+        System.out.print("Ingrese el nombre del Contacto que desea buscar: ");
+        return scanner.nextLine();
+    }
+
+    public ContactoModelo modificarContacto(String id) {
+        System.out.println("--------------------------------------------------");
         System.out.print("Ingrese nuevo nombre del Contacto: ");
         String nuevoNombre = scanner.nextLine();
         System.out.print("Ingrese nuevo numero del Contacto: ");
@@ -59,11 +63,11 @@ public class ContactoVista {
         return scanner.next();
     }
 
-    public void mostrarContacto(ArrayList<ContactoModelo> estudiantes) {
+    public void mostrarContacto(ArrayList<ContactoModelo> contactos) {
         System.out.println("--------------------------------------------------");
         System.out.println("Lista de Contactos:");
-        for (ContactoModelo estudiante : estudiantes) {
-            System.out.println("Nombre: " + estudiante.getNombre() + ", Numero: " + estudiante.getId());
+        for (ContactoModelo contacto : contactos) {
+            System.out.println("Nombre: " + contacto.getNombre() + ", Numero: " + contacto.getId());
         }
     }
 
